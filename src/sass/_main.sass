@@ -1,0 +1,38 @@
+.content__wrapper
+  width: 940px
+  margin: 0 auto
+
+.aside
+  width: 210px
+  &_left
+    margin-right: 5px
+  &-right
+    margin-left: 5px
+
+.menu
+  margin: 0
+  padding-top: 13px
+  &__item
+    display: flex
+    align-items: center
+    padding-bottom: 11px
+    margin-bottom: 12px
+    border-bottom: 1px solid #e0e2e6
+    &_feed::before
+      content: url(../img/feed.svg)
+      margin-right: 20px
+      flex-basis: 30px
+    &_ask::before
+      content: url(../img/ask.svg)
+      margin-right: 20px
+      flex-basis: 30px
+    &_companies::before
+      content: url(../img/companies.svg)
+      margin-right: 20px
+      flex-basis: 30px
+    &_services::before
+      content: url(../img/services.svg)
+      margin-right: 20px  
+      flex-basis: 30px 
+  &__link
+    color: #646b75
