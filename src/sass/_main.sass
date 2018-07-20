@@ -1,17 +1,18 @@
 .content__wrapper
-  width: 940px
+  max-width: 940px
   margin: 0 auto
+  display: flex
 
 .aside
-  width: 210px
+  // width: 210px
   &_left
-    margin-right: 5px
-  &-right
-    margin-left: 5px
+    margin-right: 15px
+  &_right
+    margin-left: 15px
 
 .menu
   margin: 0
-  padding-top: 13px
+  padding: 13px 0 0 0
   &__item
     display: flex
     align-items: center
@@ -40,7 +41,7 @@
 .adsss 
   margin-top: 19px
   border-bottom: 1px solid #e0e2e6
-  &__header
+  &__title
     font-size: 14px
     font-weight: 600
     color: #7c8695
@@ -52,12 +53,13 @@
     font-weight: 400
 
 .featured
+  width: 210px
   border-bottom: 1px solid #e0e2e6
-  &__header_container
+  &__title-container
     display: flex
     justify-content: space-between
     margin-top: 19px
-  &__header
+  &__title
     color: #7c8695
     font-size: 14px
     font-weight: 400
@@ -65,7 +67,7 @@
   &__cards
     margin-top: 17px
 
-.card
+.card-featured
   display: flex
   margin-bottom: 17px
   &__photo
@@ -83,27 +85,82 @@
     font-size: 14px
     margin: 0 0 6px
 
-.btn__see-all
+.btn-all
   color: #1c2534
   font-size: 14px
   font-weight: 400
 
-.btn__follow
+.btn-follow
     font-size: 12px
     font-weight: 400
     color: #1c2534
     display: block
 
 .footer
-  color: #b7bfcd
   font-size: 12px
 
 .copy
+  color: #b7bfcd
   margin: 17px 0 4px
+  display: block
 
 .terms
+  color: #b7bfcd
   display: inline-block
   margin-right: 17px
 
 .privacy
+  color: #b7bfcd
   display: inline-block
+
+.main
+  &__title-container
+    display: flex
+    justify-content: space-between
+    margin: 13px 0 19px
+  &__title
+    color: #1c2534
+    font-size: 30px
+    font-weight: 400
+    margin: 0
+
+.btn-newservice
+  font-size: 14px
+  color: #fff
+  width: 145px
+  height: 30px
+  margin-top: -1px
+  margin-right: 4px
+  border-radius: 5px
+  background-color: #87b448
+  border: none
+
+.main__services
+  display: flex
+  flex-flow: row wrap
+  padding: 15px
+  border: 1px solid #e0e2e6
+
+.service-main
+  margin: 0
+  text-align: center
+  margin-bottom: 120px
+  margin-right: 20px
+  &__icon
+    width: 140px
+    height: 140px
+    border: 1px solid #e0e2e6
+    // box-sizing: border-box
+    // display: flex
+    justify-content: center
+    align-items: center
+  &__caption
+    color: #1c2534
+    font-size: 14px
+    font-weight: 400
+
+.black
+  border: 1px solid red
+  width: 100px
+  height: 100px
+  background-color: #000

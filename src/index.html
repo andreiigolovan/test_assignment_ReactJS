@@ -29,7 +29,7 @@
       </div>
       <div class="user">
         <a href="#">
-          <img class="user__photo" src="img/image.png" alt="profile photo">
+          <img class="user__avatar" src="img/image.png" alt="profile photo">
         </a>
         <a class="user__link" href="#">Maximillian Beekeeper</a>
       </div>
@@ -39,76 +39,171 @@
   <div class="content__wrapper">
     <!-- left aside section-->
     <aside class="aside_left aside">
-      <div class="menu">
+      <ul class="menu">
         <li class="menu__item menu__item_feed"><a href="#" class="menu__link">Feed</a></li>
         <li class="menu__item menu__item_ask"><a href="#" class="menu__link">Ask a Colleague</a></li>
         <li class="menu__item menu__item_companies"><a href="#" class="menu__link">Companies</a></li>
         <li class="menu__item menu__item_services"><a href="#" class="menu__link">Service Directory</a></li>
-      </div>
+      </ul>
       <div class="adsss">
         <!-- smth new now,chrome hides blocks with "ads/adss/advertisement's" classNames -->
-        <h2 class="adsss__header">Advertisement</h2>
+        <!-- that was my AdBlock extension =( -->
+        <h2 class="adsss__title">Advertisement</h2>
         <a href="#"><img class="adsss__image" src="img/-----1.jpg" alt="Advertisement"></a>
         <p class="adsss__desc">Ads By Denteez.com</p>
       </div>
       <div class="featured">
-        <div class="featured__header_container">
-          <h3 class="featured__header">Featured Companies</h3>
-          <a href="#" class="btn__see-all">See All</a>
+        <div class="featured__title-container">
+          <h3 class="featured__title">Featured Companies</h3>
+          <a href="#" class="btn-all">See All</a>
         </div>
         <div class="featured__cards">
-          <div class="card">
-            <div class="card__photo">
+          <div class="featured__card card-featured">
+            <div class="card-featured__photo">
               <a href="#">
                 <img src="img/layer-39.jpg" alt="office of manufacturer">
               </a>
             </div>
-            <div class="card__info">
-              <a href="#" class="card__info_company-name">Company Name</a>
-              <p class="card__info_company-mfc">Manufacturer</p>
-              <p class="card__info_company-location">Belgrade, Serbia</p>
-              <a href="#" class="btn__follow">Follow Now</a>
+            <div class="card-featured__info">
+              <a href="#" class="card-featured__info_company-name">Company Name</a>
+              <p class="card-featured__info_company-mfc">Manufacturer</p>
+              <p class="card-featured__info_company-location">Belgrade, Serbia</p>
+              <a href="#" class="btn-follow">Follow Now</a>
             </div>
           </div>
-          <div class="card">
-            <div class="card__photo">
+          <div class="card-featured">
+            <div class="card-featured__photo">
               <a href="#">
                 <img src="img/layer-40.jpg" alt="building of service provider">
               </a>
             </div>
-            <div class="card__info">
-              <a href="#" class="card__info_company-name">Company Name</a>
-              <p class="card__info_company-mfc">Service Provider</p>
-              <p class="card__info_company-location">New York, USA</p>
-              <a href="#" class="btn__follow">Follow Now</a>
+            <div class="card-featured__info">
+              <a href="#" class="card-featured__info_company-name">Company Name</a>
+              <p class="card-featured__info_company-mfc">Service Provider</p>
+              <p class="card-featured__info_company-location">New York, USA</p>
+              <a href="#" class="btn-follow">Follow Now</a>
             </div>
           </div>
-          <div class="card">
-            <div class="card__photo">
+          <div class="card-featured">
+            <div class="card-featured__photo">
               <a href="#">
                 <img src="img/layer-41.jpg" alt="building of supplier">
               </a>
             </div>
-            <div class="card__info">
-              <a href="#" class="card__info_company-name">Company Name</a>
-              <p class="card__info_company-mfc">Supplier</p>
-              <p class="card__info_company-location">London, England</p>
-              <a href="#" class="btn__follow">Follow Now</a>
+            <div class="card-featured__info">
+              <a href="#" class="card-featured__info_company-name">Company Name</a>
+              <p class="card-featured__info_company-mfc">Supplier</p>
+              <p class="card-featured__info_company-location">London, England</p>
+              <a href="#" class="btn-follow">Follow Now</a>
             </div>
           </div>
         </div>
       </div>
       <div class="footer">
-        <p class="copy">Denteez Copyright 2015</p>
-        <p class="terms">Terms of use</p>
-        <p class="privacy">Privacy Policy</p>
+        <a href="#" class="copy">Denteez Copyright 2015</a>
+        <a href="#" class="terms">Terms of use</a>
+        <a href="#" class="privacy">Privacy Policy</a>
       </div>
     </aside>
     <!-- main section-->
-    <main>
+    <main class="main">
+      <div class="main__title-container">
+        <h1 class="main__title">Service Directory</h1>
+        <button class="btn-newservice">Add New Service</button>
+      </div>
+      <div class="main__services">
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-51.svg" alt="Associations"></div>
+          <h4 class="service-main__caption">Associations</h4>
+        </a>
+        <!-- <a href="">
+          <div>
+            <div><img src="" alt=""></div>
+            <h4></h4>
+          </div>
+          </a> -->
+        <!-- a>div>(div>img)+h4 -->
+        <!-- dfbd -->
+        <div class="main__service service-main">
+          <a href="#" class="service-main__icon"><img src="img/shape-52.svg" alt="Associations"></a>
+          <div class="service-main__caption">Associations</div>
+        </div>
+        <div class="main__service service-main">
+          <a href="#" class="service-main__icon"><img src="img/shape-54.svg" alt="Buy/Sell Dental
+Practice"></a>
+          <div class="service-main__caption">Buy/Sell Dental Practice</div>
+        </div>
+        <div class="main__service service-main">
+          <a href="#" class="service-main__icon"><img src="img/shape-56.svg" alt="Clinical Waste
+Collection"></a>
+          <div class="service-main__caption">Clinical Waste Collection
+          </div>
+        </div>
+        <div class="main__service service-main">
+          <a href="#" class="service-main__icon"><img src="img/shape-57.svg" alt="Computer Service"></a>
+          <div class="service-main__caption">Computer Service</div>
+        </div>
+        <div class="main__service service-main">
+          <a href="#" class="service-main__icon"><img src="img/shape-58.svg" alt="CPR/Basic Life
+Support Training"></a>
+          <div class="service-main__caption">CPR/Basic Life Support Training</div>
+        </div>
+        <!-- ------- -->
+        <div class="main__service service-main">
+          <a href="#" class="service-main__icon"><img src="" alt=""></a>
+          <div class="service-main__caption"></div>
+        </div>
+      </div>
     </main>
     <!-- right aside section-->
     <aside class="aside_right aside">
+      <div class="featured">
+        <div class="featured__title-container">
+          <h3 class="featured__title">Featured Companies</h3>
+          <a href="#" class="btn-all">See All</a>
+        </div>
+        <div class="featured__cards">
+          <div class="featured__card card-featured">
+            <div class="card-featured__photo">
+              <a href="#">
+                <img src="img/layer-39.jpg" alt="office of manufacturer">
+              </a>
+            </div>
+            <div class="card-featured__info">
+              <a href="#" class="card-featured__info_company-name">Company Name</a>
+              <p class="card-featured__info_company-mfc">Manufacturer</p>
+              <p class="card-featured__info_company-location">Belgrade, Serbia</p>
+              <a href="#" class="btn-follow">Follow Now</a>
+            </div>
+          </div>
+          <div class="card-featured">
+            <div class="card-featured__photo">
+              <a href="#">
+                <img src="img/layer-40.jpg" alt="building of service provider">
+              </a>
+            </div>
+            <div class="card-featured__info">
+              <a href="#" class="card-featured__info_company-name">Company Name</a>
+              <p class="card-featured__info_company-mfc">Service Provider</p>
+              <p class="card-featured__info_company-location">New York, USA</p>
+              <a href="#" class="btn-follow">Follow Now</a>
+            </div>
+          </div>
+          <div class="card-featured">
+            <div class="card-featured__photo">
+              <a href="#">
+                <img src="img/layer-41.jpg" alt="building of supplier">
+              </a>
+            </div>
+            <div class="card-featured__info">
+              <a href="#" class="card-featured__info_company-name">Company Name</a>
+              <p class="card-featured__info_company-mfc">Supplier</p>
+              <p class="card-featured__info_company-location">London, England</p>
+              <a href="#" class="btn-follow">Follow Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </aside>
   </div>
   <script src="js/index.js"></script>
