@@ -16,8 +16,10 @@
         <a href="#home"><img src="img/logo.png" alt="logo"></a>
       </div>
       <div class="searchfield">
-        <input type="text" class="searchfield__input" name="text__input" placeholder="Company Name">
-        <img class="searchfield__image" src="img/search.svg" alt="search">
+        <form action="#" method="post">
+          <input type="text" class="searchfield__input" name="text__input" placeholder="Company Name">
+          <img class="searchfield__image" src="img/search.svg" alt="search">
+        </form>
       </div>
       <div class="control">
         <a href="#">
@@ -55,7 +57,7 @@
       <div class="featured">
         <div class="featured__title-container">
           <h3 class="featured__title">Featured Companies</h3>
-          <a href="#" class="btn-all">See All</a>
+          <a href="#" class="btn btn-all">See All</a>
         </div>
         <div class="featured__cards">
           <div class="featured__card card-featured">
@@ -68,7 +70,7 @@
               <a href="#" class="card-featured__info_company-name">Company Name</a>
               <p class="card-featured__info_company-mfc">Manufacturer</p>
               <p class="card-featured__info_company-location">Belgrade, Serbia</p>
-              <a href="#" class="btn-follow">Follow Now</a>
+              <a href="#" class="btn btn-follow">Follow Now</a>
             </div>
           </div>
           <div class="card-featured">
@@ -81,7 +83,7 @@
               <a href="#" class="card-featured__info_company-name">Company Name</a>
               <p class="card-featured__info_company-mfc">Service Provider</p>
               <p class="card-featured__info_company-location">New York, USA</p>
-              <a href="#" class="btn-follow">Follow Now</a>
+              <a href="#" class="btn btn-follow">Follow Now</a>
             </div>
           </div>
           <div class="card-featured">
@@ -94,7 +96,7 @@
               <a href="#" class="card-featured__info_company-name">Company Name</a>
               <p class="card-featured__info_company-mfc">Supplier</p>
               <p class="card-featured__info_company-location">London, England</p>
-              <a href="#" class="btn-follow">Follow Now</a>
+              <a href="#" class="btn btn-follow">Follow Now</a>
             </div>
           </div>
         </div>
@@ -113,96 +115,150 @@
       </div>
       <div class="main__services">
         <a href="#" class="main__service service-main">
-          <div class="service-main__icon"><img src="img/shape-51.svg" alt="Associations"></div>
+          <div class="service-main__icon"><img src="img/shape-51.svg" alt="Accountancy"></div>
+          <h4 class="service-main__caption">Accountancy</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-52.svg" alt="Associations"></div>
           <h4 class="service-main__caption">Associations</h4>
         </a>
-        <!-- <a href="">
-          <div>
-            <div><img src="" alt=""></div>
-            <h4></h4>
-          </div>
-          </a> -->
-        <!-- a>div>(div>img)+h4 -->
-        <!-- dfbd -->
-        <div class="main__service service-main">
-          <a href="#" class="service-main__icon"><img src="img/shape-52.svg" alt="Associations"></a>
-          <div class="service-main__caption">Associations</div>
-        </div>
-        <div class="main__service service-main">
-          <a href="#" class="service-main__icon"><img src="img/shape-54.svg" alt="Buy/Sell Dental
-Practice"></a>
-          <div class="service-main__caption">Buy/Sell Dental Practice</div>
-        </div>
-        <div class="main__service service-main">
-          <a href="#" class="service-main__icon"><img src="img/shape-56.svg" alt="Clinical Waste
-Collection"></a>
-          <div class="service-main__caption">Clinical Waste Collection
-          </div>
-        </div>
-        <div class="main__service service-main">
-          <a href="#" class="service-main__icon"><img src="img/shape-57.svg" alt="Computer Service"></a>
-          <div class="service-main__caption">Computer Service</div>
-        </div>
-        <div class="main__service service-main">
-          <a href="#" class="service-main__icon"><img src="img/shape-58.svg" alt="CPR/Basic Life
-Support Training"></a>
-          <div class="service-main__caption">CPR/Basic Life Support Training</div>
-        </div>
-        <!-- ------- -->
-        <div class="main__service service-main">
-          <a href="#" class="service-main__icon"><img src="" alt=""></a>
-          <div class="service-main__caption"></div>
-        </div>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-54.svg" alt="Buy/Sell Dental Practice"></div>
+          <h4 class="service-main__caption">Buy/Sell Dental Practice</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-56.svg" alt="Clinical Waste Collection"></div>
+          <h4 class="service-main__caption">Clinical Waste Collection</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-57.svg" alt="Computer Service"></div>
+          <h4 class="service-main__caption">Computer Service</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-58.svg" alt="CPR/Basic Life Support Training"></div>
+          <h4 class="service-main__caption">CPR/Basic Life Support Training</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-61.svg" alt="Dental Recruitment"></div>
+          <h4 class="service-main__caption">Dental Recruitment</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-62.svg" alt="Dental Software"></div>
+          <h4 class="service-main__caption">Dental Software</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-63.svg" alt="Electrical Safety And Testing"></div>
+          <h4 class="service-main__caption">Electrical Safety And Testing</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-65.svg" alt="Marketing"></div>
+          <h4 class="service-main__caption">Marketing</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-71.svg" alt="Others"></div>
+          <h4 class="service-main__caption">Others</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-66.svg" alt="Repairs"></div>
+          <h4 class="service-main__caption">Repairs</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-68.svg" alt="Solicitors"></div>
+          <h4 class="service-main__caption">Solicitors</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-75.svg" alt="Surgery Design"></div>
+          <h4 class="service-main__caption">Surgery Design</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-69.svg" alt="Training & Courses"></div>
+          <h4 class="service-main__caption">Training & Courses</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-72.svg" alt="Web Designers"></div>
+          <h4 class="service-main__caption">Web Designers</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-55.svg" alt="Cleaning Agencies"></div>
+          <h4 class="service-main__caption">Cleaning Agencies</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-60.svg" alt="Dental  Chair Recovery"></div>
+          <h4 class="service-main__caption">Dental Chair Recovery</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-64.svg" alt="Equipment Engineering"></div>
+          <h4 class="service-main__caption">Equipment Engineering</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-67.svg" alt="Selling Gold"></div>
+          <h4 class="service-main__caption">Selling Gold</h4>
+        </a>
+        <a href="#" class="main__service service-main">
+          <div class="service-main__icon"><img src="img/shape-70.svg" alt="Uniform & Workwear"></div>
+          <h4 class="service-main__caption">Uniform & Workwear</h4>
+        </a>
       </div>
     </main>
     <!-- right aside section-->
     <aside class="aside_right aside">
       <div class="featured">
         <div class="featured__title-container">
-          <h3 class="featured__title">Featured Companies</h3>
-          <a href="#" class="btn-all">See All</a>
+          <h3 class="featured__title">People you may know</h3>
+          <a href="#" class="btn btn-all">See All</a>
         </div>
         <div class="featured__cards">
-          <div class="featured__card card-featured">
-            <div class="card-featured__photo">
-              <a href="#">
-                <img src="img/layer-39.jpg" alt="office of manufacturer">
-              </a>
-            </div>
-            <div class="card-featured__info">
-              <a href="#" class="card-featured__info_company-name">Company Name</a>
-              <p class="card-featured__info_company-mfc">Manufacturer</p>
-              <p class="card-featured__info_company-location">Belgrade, Serbia</p>
-              <a href="#" class="btn-follow">Follow Now</a>
-            </div>
-          </div>
-          <div class="card-featured">
-            <div class="card-featured__photo">
-              <a href="#">
-                <img src="img/layer-40.jpg" alt="building of service provider">
-              </a>
-            </div>
-            <div class="card-featured__info">
-              <a href="#" class="card-featured__info_company-name">Company Name</a>
-              <p class="card-featured__info_company-mfc">Service Provider</p>
-              <p class="card-featured__info_company-location">New York, USA</p>
-              <a href="#" class="btn-follow">Follow Now</a>
+          <div class="featured__card card-featured_people">
+            <a href="#" class="card-featured__title">Dennis Adams</a>
+            <div class="card-featured__wrap">
+              <div class="card-featured__photo">
+                <a href="#">
+                  <img src="img/layer-36.jpg" alt="Dennis Adams">
+                </a>
+              </div>
+              <div class="card-featured__info">
+                <p class="card-featured__info_position">Dentist (Practice Owner)</p>
+                <p class="card-featured__info_location">London, England</p>
+                <a href="#" class="btn btn-addfriend">Add friend</a>
+              </div>
             </div>
           </div>
-          <div class="card-featured">
-            <div class="card-featured__photo">
-              <a href="#">
-                <img src="img/layer-41.jpg" alt="building of supplier">
-              </a>
+          <div class="featured__card card-featured_people">
+            <a href="#" class="card-featured__title">Mary Carpenter</a>
+            <div class="card-featured__wrap">
+              <div class="card-featured__photo">
+                <a href="#">
+                  <img src="img/layer-37.jpg" alt="Mary Carpenter">
+                </a>
+              </div>
+              <div class="card-featured__info">
+                <p class="card-featured__info_position">Dentist (Practice Owner)</p>
+                <p class="card-featured__info_location">Belgrade, Serbia</p>
+                <a href="#" class="btn btn-addfriend">Add friend</a>
+              </div>
             </div>
-            <div class="card-featured__info">
-              <a href="#" class="card-featured__info_company-name">Company Name</a>
-              <p class="card-featured__info_company-mfc">Supplier</p>
-              <p class="card-featured__info_company-location">London, England</p>
-              <a href="#" class="btn-follow">Follow Now</a>
+          </div>
+          <div class="featured__card card-featured_people">
+            <a href="#" class="card-featured__title">Danielle Salazar</a>
+            <div class="card-featured__wrap">
+              <div class="card-featured__photo">
+                <a href="#">
+                  <img src="img/layer-38.jpg" alt="Danielle Salazar">
+                </a>
+              </div>
+              <div class="card-featured__info">
+                <p class="card-featured__info_position">Dentist (Practice Owner)</p>
+                <p class="card-featured__info_location">Paris, France</p>
+                <a href="#" class="btn btn-addfriend">Add friend</a>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="adsss adsss_right">
+        <h2 class="adsss__title">Advertisement</h2>
+        <a href="#"><img class="adsss__image" src="img/-----2.jpg" alt="Advertisement"></a>
+        <p class="adsss__desc">Ads By Denteez.com</p>
       </div>
     </aside>
   </div>

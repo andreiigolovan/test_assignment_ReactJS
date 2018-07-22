@@ -1,23 +1,28 @@
 {
-  "name": "Test assignment project",
+  "name": "test_assignment_project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": "",
-  "devDependencies": {
-    "browser-sync": "^2.24.5",
+  "description": "!!! builded project is located into dist/",
+  "main": "dist/index.html",
+  "dependencies": {
+    "browser-sync": "^2.24.6",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
     "gulp-autoprefixer": "^5.0.0",
-    "gulp-sass": "^4.0.1"
+    "hoek": "^5.0.3"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/andreiigolovan"
+    "url": "git+https://github.com/andreiigolovan/test_assignment_project.git"
   },
   "author": "andreiigolovan@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreiigolovan/test_assignment_project/issues"
+  },
+  "homepage": "https://github.com/andreiigolovan/test_assignment_project#readme"
 }

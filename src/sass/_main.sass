@@ -1,10 +1,13 @@
 .content__wrapper
-  max-width: 940px
+  min-width: 940px
+  width: 70%
   margin: 0 auto
   display: flex
-
+  @media screen and (min-width: 1440px)
+    width: 1010px
+    
 .aside
-  // width: 210px
+  width: 210px
   &_left
     margin-right: 15px
   &_right
@@ -51,6 +54,8 @@
     font-size: 11px
     margin: 4px 0 18px
     font-weight: 400
+  &_right
+    border-bottom: none
 
 .featured
   width: 210px
@@ -85,16 +90,22 @@
     font-size: 14px
     margin: 0 0 6px
 
+a
+  &:hover
+    color: purple
+  &:active
+    color: red
+
 .btn-all
   color: #1c2534
   font-size: 14px
   font-weight: 400
 
 .btn-follow
-    font-size: 12px
-    font-weight: 400
-    color: #1c2534
-    display: block
+  font-size: 12px
+  font-weight: 400
+  color: #1c2534
+  display: block
 
 .footer
   font-size: 12px
@@ -126,6 +137,7 @@
 
 .btn-newservice
   font-size: 14px
+  font-family: 'Proxima Nova Regular', sans-serif
   color: #fff
   width: 145px
   height: 30px
@@ -134,24 +146,30 @@
   border-radius: 5px
   background-color: #87b448
   border: none
+  &:hover
+    opacity: 0.9
+  &:active
+    background-color: #73993d
 
 .main__services
   display: flex
   flex-flow: row wrap
+  justify-content: space-between
   padding: 15px
+  padding-bottom: 0
+  margin-bottom: 30px
   border: 1px solid #e0e2e6
+  border-radius: 5px
 
 .service-main
+  width: 140px
   margin: 0
   text-align: center
-  margin-bottom: 120px
-  margin-right: 20px
   &__icon
     width: 140px
     height: 140px
     border: 1px solid #e0e2e6
-    // box-sizing: border-box
-    // display: flex
+    display: flex
     justify-content: center
     align-items: center
   &__caption
@@ -159,8 +177,30 @@
     font-size: 14px
     font-weight: 400
 
-.black
-  border: 1px solid red
-  width: 100px
-  height: 100px
-  background-color: #000
+.service-main:hover 
+  .service-main__icon
+    background-color: #f4f7fb
+  .service-main__caption
+    color: #71973c
+
+.card-featured
+  &__wrap
+   display: flex
+  &__title
+    color: #1c2534
+    margin: -2px 0 6px
+    display: block
+  &__info_position
+    color: #7c8695
+    font-size: 14px
+    margin: 0 0 6px
+  &__info_location
+    color: #7c8695
+    font-size: 14px
+    margin: 0 0 6px
+
+.btn-addfriend
+  font-size: 12px
+  font-weight: 400
+  color: #1c2534
+  display: block
