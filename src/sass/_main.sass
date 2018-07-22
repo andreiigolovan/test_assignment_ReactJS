@@ -44,6 +44,8 @@
 .adsss 
   margin-top: 19px
   border-bottom: 1px solid #e0e2e6
+  &__wrap
+    height: 300px
   &__title
     font-size: 14px
     font-weight: 600
@@ -137,7 +139,7 @@ a
 
 .btn-newservice
   font-size: 14px
-  font-family: 'Proxima Nova Regular', sans-serif
+  font-family: inherit
   color: #fff
   width: 145px
   height: 30px
@@ -186,9 +188,10 @@ a
 .card-featured
   &__wrap
    display: flex
+   margin-bottom: 15px
   &__title
     color: #1c2534
-    margin: -2px 0 6px
+    margin: 0 0 8px
     display: block
   &__info_position
     color: #7c8695
@@ -198,9 +201,15 @@ a
     color: #7c8695
     font-size: 14px
     margin: 0 0 6px
+  &__info_desc
+    color: #7c8695
+    font-size: 14px
+    margin: 0 0 6px
+    line-height: 16px
 
 .btn-addfriend
   font-size: 12px
   font-weight: 400
   color: #1c2534
   display: block
+

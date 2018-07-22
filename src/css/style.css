@@ -235,6 +235,10 @@ li {
   border-bottom: 1px solid #e0e2e6;
 }
 
+.adsss__wrap {
+  height: 300px;
+}
+
 .adsss__title {
   font-size: 14px;
   font-weight: 600;
@@ -374,7 +378,7 @@ a:active {
 
 .btn-newservice {
   font-size: 14px;
-  font-family: 'Proxima Nova Regular', sans-serif;
+  font-family: inherit;
   color: #fff;
   width: 145px;
   height: 30px;
@@ -459,11 +463,12 @@ a:active {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 15px;
 }
 
 .card-featured__title {
   color: #1c2534;
-  margin: -2px 0 6px;
+  margin: 0 0 8px;
   display: block;
 }
 
@@ -477,6 +482,13 @@ a:active {
   color: #7c8695;
   font-size: 14px;
   margin: 0 0 6px;
+}
+
+.card-featured__info_desc {
+  color: #7c8695;
+  font-size: 14px;
+  margin: 0 0 6px;
+  line-height: 16px;
 }
 
 .btn-addfriend {

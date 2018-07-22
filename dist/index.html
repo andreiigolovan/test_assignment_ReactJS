@@ -51,7 +51,9 @@
         <!-- smth new now,chrome hides blocks with "ads/adss/advertisement's" classNames -->
         <!-- that was my AdBlock extension =( -->
         <h2 class="adsss__title">Advertisement</h2>
-        <a href="#"><img class="adsss__image" src="img/-----1.jpg" alt="Advertisement"></a>
+        <div class="adsss__wrap">
+          <a href="#"><img id="adsss__image_left" class="adsss__image" src="img/-----1.jpg" alt="Advertisement"></a>
+        </div>
         <p class="adsss__desc">Ads By Denteez.com</p>
       </div>
       <div class="featured">
@@ -255,9 +257,44 @@
           </div>
         </div>
       </div>
+      <div class="featured">
+        <div class="featured__title-container">
+          <h3 class="featured__title">Featured Products</h3>
+          <a href="#" class="btn btn-all">See All</a>
+        </div>
+        <div class="featured__cards">
+          <div class="featured__card card-featured_product">
+            <a href="#" class="card-featured__title">Product Name</a>
+            <div class="card-featured__wrap">
+              <div class="card-featured__photo">
+                <a href="#">
+                  <img src="img/layer-34.jpg" alt="child during treatment">
+                </a>
+              </div>
+              <div class="card-featured__info">
+                <p class="card-featured__info_desc">Product Short Description. The quick brown fox jumps over the lazy dog.</p>
+              </div>
+            </div>
+          </div>
+          <div class="featured__card card-featured_people">
+            <a href="#" class="card-featured__title">Product Name</a>
+            <div class="card-featured__wrap">
+              <div class="card-featured__photo">
+                <a href="#">
+                  <img src="img/layer-35.jpg" alt="doctor's photo">
+                </a>
+              </div>
+              <div class="card-featured__info">
+                <p class="card-featured__info_desc">Product Short Description.
+                  <br> The quick brown fox jumps over the lazy dog.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="adsss adsss_right">
         <h2 class="adsss__title">Advertisement</h2>
-        <a href="#"><img class="adsss__image" src="img/-----2.jpg" alt="Advertisement"></a>
+        <a href="#"><img id="adsss__image_right" class="adsss__image" src="img/-----2.jpg" alt="Advertisement"></a>
         <p class="adsss__desc">Ads By Denteez.com</p>
       </div>
     </aside>
