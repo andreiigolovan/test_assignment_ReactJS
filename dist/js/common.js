@@ -27,6 +27,14 @@ function rightAdsssInterval() {
 rightAdsssInterval();
 "use strict";
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 // let react = require('react');
 // import ReactDOM from 'react-dom';
 
@@ -37,7 +45,7 @@ function ServiceBlock(props) {
     React.createElement(
       "div",
       { className: "service-main__icon" },
-      React.createElement("img", { src: props.src, alt: props.title })
+      React.createElement("img", { src: 'img/' + props.src, alt: props.title })
     ),
     React.createElement(
       "h4",
@@ -47,4 +55,39 @@ function ServiceBlock(props) {
   );
 }
 
-ReactDOM.render(React.createElement(ServiceBlock, { src: "img/shape-72.svg", title: "Web Designers" }), document.getElementById('root'));
+var App = function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
+
+  _createClass(App, [{
+    key: "render",
+    value: function render() {
+      return this.props.blocks.map(function (block) {
+        return React.createElement(ServiceBlock, { title: block.title, src: block.src });
+      });
+    }
+  }]);
+
+  return App;
+}(React.Component);
+
+var data = [{
+  title: 'Accountancy',
+  src: 'shape-51.svg'
+}, {
+  title: 'Associations',
+  src: 'shape-52.svg'
+}, {
+  title: 'Buy/Sell Dental Practice',
+  src: 'shape-54.svg'
+}, {
+  title: 'Clinical Waste Collection',
+  src: 'shape-56.svg'
+}];
+
+ReactDOM.render(React.createElement(App, { blocks: data }), document.getElementById('root'));
