@@ -357,6 +357,10 @@ a:active {
   display: inline-block;
 }
 
+.main {
+  min-width: 52%;
+}
+
 .main__title-container {
   display: -webkit-box;
   display: -webkit-flex;

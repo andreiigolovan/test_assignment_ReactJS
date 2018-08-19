@@ -2,7 +2,9 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
     autoprefixer = require('gulp-autoprefixer'),
-    del = require('del');
+    del = require('del'),
+    babel = require('gulp-babel'),
+    concat = require('gulp-concat');
 
 gulp.task('sass', function() {
     return gulp.src(['src/sass/**/*.sass', 'src/sass/**/*.scss'])
@@ -34,19 +36,24 @@ gulp.task('watch', ['browser-sync', 'sass'], function() {
 gulp.task('build', ['clean', 'sass'], function() {
 
     let buildCss = gulp.src('src/css/style.css')
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('dist/css'));
 
     let buildFonts = gulp.src('src/fonts/**/*')
-        .pipe(gulp.dest('dist/fonts'))
+        .pipe(gulp.dest('dist/fonts'));
 
-    let buildJs = gulp.src('src/js/**/*')
-        .pipe(gulp.dest('dist/js'))
+    // let buildJs = gulp.src('src/js/**/*')
+    //     .pipe(gulp.dest('dist/js'))
+
+    let buldJs = gulp.src('src/js/**/*.js')
+        .pipe(babel())
+        .pipe(concat('common.js'))
+        .pipe(gulp.dest('dist/js'));
 
     let buildHtml = gulp.src('src/*.html')
         .pipe(gulp.dest('dist'));
 
     let copyImg = gulp.src('src/img/**/*')
-        .pipe(gulp.dest('dist/img'))
+        .pipe(gulp.dest('dist/img'));
 
 });
 
