@@ -147,6 +147,10 @@ li {
   left: 42px;
 }
 
+.user__link:hover {
+  color: #eeeeee;
+}
+
 .content__wrapper {
   min-width: 940px;
   width: 70%;
@@ -396,6 +400,7 @@ a:active {
 
 .btn-newservice:hover {
   opacity: 0.9;
+  cursor: pointer;
 }
 
 .btn-newservice:active {

@@ -35,6 +35,100 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function CompanyPicture(props) {
+  return React.createElement(
+    "div",
+    { className: "card-featured__photo" },
+    React.createElement(
+      "a",
+      { href: "#" },
+      React.createElement("img", { src: 'img/' + props.src, alt: props.altText })
+    )
+  );
+}
+
+function CompanyInfo(props) {
+  return React.createElement(
+    "div",
+    { className: "card-featured__info" },
+    React.createElement(
+      "a",
+      { href: "#", "class": "card-featured__info_company-name" },
+      props.name
+    ),
+    React.createElement(
+      "p",
+      { className: "card-featured__info_company-mfc" },
+      props.specialization
+    ),
+    React.createElement(
+      "p",
+      { className: "card-featured__info_company-location" },
+      props.location
+    ),
+    React.createElement(
+      "a",
+      { href: "#", className: "btn btn-follow" },
+      "Follow Now"
+    )
+  );
+}
+
+var Company = function (_React$Component) {
+  _inherits(Company, _React$Component);
+
+  function Company() {
+    _classCallCheck(this, Company);
+
+    return _possibleConstructorReturn(this, (Company.__proto__ || Object.getPrototypeOf(Company)).apply(this, arguments));
+  }
+
+  _createClass(Company, [{
+    key: "render",
+    value: function render() {
+      return this.props.companies.map(function (element) {
+        return React.createElement(
+          "div",
+          { "class": "featured__card card-featured" },
+          React.createElement(CompanyPicture, { src: element.src, altText: element.altText }),
+          React.createElement(CompanyInfo, {
+            name: element.name,
+            location: element.location,
+            specialization: element.specialization
+          })
+        );
+      });
+    }
+  }]);
+
+  return Company;
+}(React.Component);
+
+var featuredCompaniesData = [{
+  id: '1',
+  altText: 'office of manufacturer',
+  name: 'Company Name',
+  location: 'Belgrade, Serbia',
+  specialization: 'Manufacturer',
+  src: 'layer-39.jpg'
+}, {
+  id: '2',
+  altText: 'building of service provider',
+  name: 'Company Name',
+  location: 'New York, USA',
+  specialization: 'Service Provider',
+  src: 'layer-40.jpg'
+}, {
+  id: '3',
+  altText: 'building of supplier',
+  name: 'Company Name',
+  location: 'London, England',
+  specialization: 'Supplier',
+  src: 'layer-41.jpg'
+}];
+
+ReactDOM.render(React.createElement(Company, { companies: featuredCompaniesData }), document.getElementById('companies'));
+
 function ServiceBlock(props) {
   return React.createElement(
     "a",
@@ -52,16 +146,16 @@ function ServiceBlock(props) {
   );
 }
 
-var App = function (_React$Component) {
-  _inherits(App, _React$Component);
+var Services = function (_React$Component2) {
+  _inherits(Services, _React$Component2);
 
-  function App() {
-    _classCallCheck(this, App);
+  function Services() {
+    _classCallCheck(this, Services);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Services.__proto__ || Object.getPrototypeOf(Services)).apply(this, arguments));
   }
 
-  _createClass(App, [{
+  _createClass(Services, [{
     key: "render",
     value: function render() {
       return this.props.blocks.map(function (block) {
@@ -70,10 +164,10 @@ var App = function (_React$Component) {
     }
   }]);
 
-  return App;
+  return Services;
 }(React.Component);
 
-var data = [{
+var servicesData = [{
   id: 1,
   title: 'Accountancy',
   src: 'shape-51.svg'
@@ -159,4 +253,4 @@ var data = [{
   src: 'shape-70.svg'
 }];
 
-ReactDOM.render(React.createElement(App, { blocks: data }), document.getElementById('root'));
+ReactDOM.render(React.createElement(Services, { blocks: servicesData }), document.getElementById('root'));

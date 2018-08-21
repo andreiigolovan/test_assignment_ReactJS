@@ -1,3 +1,76 @@
+function CompanyPicture(props) {
+  return (
+    <div className="card-featured__photo">
+      <a href="#">
+        <img src={'img/' + props.src} alt={props.altText} />
+      </a>
+    </div>
+  );
+}
+
+function CompanyInfo(props) {
+  return (
+    <div className="card-featured__info">
+      <a href="#" class="card-featured__info_company-name">
+        {props.name}
+      </a>
+      <p className="card-featured__info_company-mfc">{props.specialization}</p>
+      <p className="card-featured__info_company-location">{props.location}</p>
+      <a href="#" className="btn btn-follow">
+        Follow Now
+      </a>
+    </div>
+  );
+}
+
+class Company extends React.Component {
+  render() {
+    return this.props.companies.map(element => {
+      return (
+        <div class="featured__card card-featured">
+          <CompanyPicture src={element.src} altText={element.altText} />
+          <CompanyInfo
+            name={element.name}
+            location={element.location}
+            specialization={element.specialization}
+          />
+        </div>
+      );
+    });
+  }
+}
+
+let featuredCompaniesData = [
+  {
+    id: '1',
+    altText: 'office of manufacturer',
+    name: 'Company Name',
+    location: 'Belgrade, Serbia',
+    specialization: 'Manufacturer',
+    src: 'layer-39.jpg'
+  },
+  {
+    id: '2',
+    altText: 'building of service provider',
+    name: 'Company Name',
+    location: 'New York, USA',
+    specialization: 'Service Provider',
+    src: 'layer-40.jpg'
+  },
+  {
+    id: '3',
+    altText: 'building of supplier',
+    name: 'Company Name',
+    location: 'London, England',
+    specialization: 'Supplier',
+    src: 'layer-41.jpg'
+  }
+];
+
+ReactDOM.render(
+  <Company companies={featuredCompaniesData} />,
+  document.getElementById('companies')
+);
 
 function ServiceBlock(props) {
   return (
@@ -10,15 +83,17 @@ function ServiceBlock(props) {
   );
 }
 
-class App extends React.Component {
+class Services extends React.Component {
   render() {
     return this.props.blocks.map(block => {
-      return <ServiceBlock key={block.id} title={block.title} src={block.src} />;
+      return (
+        <ServiceBlock key={block.id} title={block.title} src={block.src} />
+      );
     });
   }
 }
 
-let data = [
+let servicesData = [
   {
     id: 1,
     title: 'Accountancy',
@@ -126,4 +201,7 @@ let data = [
   }
 ];
 
-ReactDOM.render(<App blocks={data} />, document.getElementById('root'));
+ReactDOM.render(
+  <Services blocks={servicesData} />,
+  document.getElementById('root')
+);
