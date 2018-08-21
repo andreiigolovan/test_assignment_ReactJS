@@ -23,7 +23,7 @@ function CompanyInfo(props) {
   );
 }
 
-class Company extends React.Component {
+class Companies extends React.Component {
   render() {
     return this.props.companies.map(element => {
       return (
@@ -68,7 +68,7 @@ let featuredCompaniesData = [
 ];
 
 ReactDOM.render(
-  <Company companies={featuredCompaniesData} />,
+  <Companies companies={featuredCompaniesData} />,
   document.getElementById('companies')
 );
 
@@ -203,5 +203,83 @@ let servicesData = [
 
 ReactDOM.render(
   <Services blocks={servicesData} />,
-  document.getElementById('root')
+  document.getElementById('services')
+);
+
+function PersonName(props) {
+  return (
+    <a href="#" className="card-featured__title">
+      {props.title}
+    </a>
+  );
+}
+
+function PersonPhoto(props) {
+  return (
+    <div class="card-featured__photo">
+      <a href="#">
+        <img src={'img/' + props.src} alt={props.title} />
+      </a>
+    </div>
+  );
+}
+
+function PersonInfo(props) {
+  return (
+    <div className="card-featured__info">
+      <p className="card-featured__info_position">{props.position}</p>
+      <p className="card-featured__info_location">{props.location}</p>
+      <a href="#" className="btn btn-addfriend">
+        Add friend
+      </a>
+    </div>
+  );
+}
+
+class People extends React.Component {
+  render() {
+    return this.props.humans.map(human => {
+      return (
+        <div className="featured__card card-featured_people">
+          <PersonName title={human.title} />
+          <div class="card-featured__wrap">
+            <PersonPhoto src={human.src} title={human.title} />
+            <PersonInfo location={human.location} position={human.position} />
+          </div>
+        </div>
+      );
+    });
+  }
+}
+
+let featuredPeopleData = [
+  {
+    id: 1,
+    altText: 'Dennis Adams',
+    title: 'Dennis Adams',
+    location: 'London, England',
+    position: 'Dentist (Practice Owner)',
+    src: 'layer-36.jpg'
+  },
+  {
+    id: 2,
+    altText: 'Mary Carpenter',
+    title: 'Mary Carpenter',
+    location: 'Belgrade, Serbia',
+    position: 'Dentist (Practice Owner)',
+    src: 'layer-37.jpg'
+  },
+  {
+    id: 3,
+    altText: 'Danielle Salazar',
+    title: 'Danielle Salazar',
+    location: 'Paris, France',
+    position: 'Dentist (Practice Owner)',
+    src: 'layer-38.jpg'
+  }
+];
+
+ReactDOM.render(
+  <People humans={featuredPeopleData} />,
+  document.getElementById('people')
 );

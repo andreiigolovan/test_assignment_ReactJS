@@ -74,16 +74,16 @@ function CompanyInfo(props) {
   );
 }
 
-var Company = function (_React$Component) {
-  _inherits(Company, _React$Component);
+var Companies = function (_React$Component) {
+  _inherits(Companies, _React$Component);
 
-  function Company() {
-    _classCallCheck(this, Company);
+  function Companies() {
+    _classCallCheck(this, Companies);
 
-    return _possibleConstructorReturn(this, (Company.__proto__ || Object.getPrototypeOf(Company)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Companies.__proto__ || Object.getPrototypeOf(Companies)).apply(this, arguments));
   }
 
-  _createClass(Company, [{
+  _createClass(Companies, [{
     key: "render",
     value: function render() {
       return this.props.companies.map(function (element) {
@@ -101,7 +101,7 @@ var Company = function (_React$Component) {
     }
   }]);
 
-  return Company;
+  return Companies;
 }(React.Component);
 
 var featuredCompaniesData = [{
@@ -127,7 +127,7 @@ var featuredCompaniesData = [{
   src: 'layer-41.jpg'
 }];
 
-ReactDOM.render(React.createElement(Company, { companies: featuredCompaniesData }), document.getElementById('companies'));
+ReactDOM.render(React.createElement(Companies, { companies: featuredCompaniesData }), document.getElementById('companies'));
 
 function ServiceBlock(props) {
   return React.createElement(
@@ -253,4 +253,102 @@ var servicesData = [{
   src: 'shape-70.svg'
 }];
 
-ReactDOM.render(React.createElement(Services, { blocks: servicesData }), document.getElementById('root'));
+ReactDOM.render(React.createElement(Services, { blocks: servicesData }), document.getElementById('services'));
+
+function PersonName(props) {
+  return React.createElement(
+    "a",
+    { href: "#", className: "card-featured__title" },
+    props.title
+  );
+}
+
+function PersonPhoto(props) {
+  return React.createElement(
+    "div",
+    { "class": "card-featured__photo" },
+    React.createElement(
+      "a",
+      { href: "#" },
+      React.createElement("img", { src: 'img/' + props.src, alt: props.title })
+    )
+  );
+}
+
+function PersonInfo(props) {
+  return React.createElement(
+    "div",
+    { className: "card-featured__info" },
+    React.createElement(
+      "p",
+      { className: "card-featured__info_position" },
+      props.position
+    ),
+    React.createElement(
+      "p",
+      { className: "card-featured__info_location" },
+      props.location
+    ),
+    React.createElement(
+      "a",
+      { href: "#", className: "btn btn-addfriend" },
+      "Add friend"
+    )
+  );
+}
+
+var People = function (_React$Component3) {
+  _inherits(People, _React$Component3);
+
+  function People() {
+    _classCallCheck(this, People);
+
+    return _possibleConstructorReturn(this, (People.__proto__ || Object.getPrototypeOf(People)).apply(this, arguments));
+  }
+
+  _createClass(People, [{
+    key: "render",
+    value: function render() {
+      return this.props.humans.map(function (human) {
+        return React.createElement(
+          "div",
+          { className: "featured__card card-featured_people" },
+          React.createElement(PersonName, { title: human.title }),
+          React.createElement(
+            "div",
+            { "class": "card-featured__wrap" },
+            React.createElement(PersonPhoto, { src: human.src, title: human.title }),
+            React.createElement(PersonInfo, { location: human.location, position: human.position })
+          )
+        );
+      });
+    }
+  }]);
+
+  return People;
+}(React.Component);
+
+var featuredPeopleData = [{
+  id: 1,
+  altText: 'Dennis Adams',
+  title: 'Dennis Adams',
+  location: 'London, England',
+  position: 'Dentist (Practice Owner)',
+  src: 'layer-36.jpg'
+}, {
+  id: 2,
+  altText: 'Mary Carpenter',
+  title: 'Mary Carpenter',
+  location: 'Belgrade, Serbia',
+  position: 'Dentist (Practice Owner)',
+  src: 'layer-37.jpg'
+}, {
+  id: 3,
+  altText: 'Danielle Salazar',
+  title: 'Danielle Salazar',
+  location: 'Paris, France',
+  position: 'Dentist (Practice Owner)',
+  src: 'layer-38.jpg'
+}];
+
+ReactDOM.render(React.createElement(People, { humans: featuredPeopleData }), document.getElementById('people'));
