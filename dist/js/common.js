@@ -53,7 +53,7 @@ function CompanyInfo(props) {
     { className: "card-featured__info" },
     React.createElement(
       "a",
-      { href: "#", "class": "card-featured__info_company-name" },
+      { href: "#", className: "card-featured__info_company-name" },
       props.name
     ),
     React.createElement(
@@ -89,7 +89,7 @@ var Companies = function (_React$Component) {
       return this.props.companies.map(function (element) {
         return React.createElement(
           "div",
-          { "class": "featured__card card-featured" },
+          { className: "featured__card card-featured" },
           React.createElement(CompanyPicture, { src: element.src, altText: element.altText }),
           React.createElement(CompanyInfo, {
             name: element.name,
@@ -266,7 +266,7 @@ function PersonName(props) {
 function PersonPhoto(props) {
   return React.createElement(
     "div",
-    { "class": "card-featured__photo" },
+    { className: "card-featured__photo" },
     React.createElement(
       "a",
       { href: "#" },
@@ -316,7 +316,7 @@ var People = function (_React$Component3) {
           React.createElement(PersonName, { title: human.title }),
           React.createElement(
             "div",
-            { "class": "card-featured__wrap" },
+            { className: "card-featured__wrap" },
             React.createElement(PersonPhoto, { src: human.src, title: human.title }),
             React.createElement(PersonInfo, { location: human.location, position: human.position })
           )
@@ -352,3 +352,88 @@ var featuredPeopleData = [{
 }];
 
 ReactDOM.render(React.createElement(People, { humans: featuredPeopleData }), document.getElementById('people'));
+
+function ProductTitle(props) {
+  return React.createElement(
+    "a",
+    { href: "#", className: "card-featured__title" },
+    props.title
+  );
+}
+
+function ProductPhoto(props) {
+  return React.createElement(
+    "div",
+    { className: "card-featured__photo" },
+    React.createElement(
+      "a",
+      { href: "#" },
+      React.createElement("img", { src: 'img/' + props.src, alt: props.altText })
+    )
+  );
+}
+
+function ProductInfo(props) {
+  return React.createElement(
+    "div",
+    { className: "card-featured__info-desc" },
+    React.createElement(
+      "div",
+      null,
+      props.shortDesc
+    ),
+    React.createElement(
+      "div",
+      null,
+      props.desc
+    )
+  );
+}
+
+var Products = function (_React$Component4) {
+  _inherits(Products, _React$Component4);
+
+  function Products() {
+    _classCallCheck(this, Products);
+
+    return _possibleConstructorReturn(this, (Products.__proto__ || Object.getPrototypeOf(Products)).apply(this, arguments));
+  }
+
+  _createClass(Products, [{
+    key: "render",
+    value: function render() {
+      return this.props.products.map(function (product) {
+        return React.createElement(
+          "div",
+          { className: "featured__card card-featured_product" },
+          React.createElement(ProductTitle, { title: product.title }),
+          React.createElement(
+            "div",
+            { className: "card-featured__wrap" },
+            React.createElement(ProductPhoto, { src: product.src, altText: product.altText }),
+            React.createElement(ProductInfo, { desc: product.desc, shortDesc: product.shortDesc })
+          )
+        );
+      });
+    }
+  }]);
+
+  return Products;
+}(React.Component);
+
+var featuredProductsData = [{
+  id: 1,
+  altText: 'child during treatment',
+  title: 'Product Name',
+  shortDesc: 'Product Short Description.',
+  desc: 'The quick brown fox jumps over the lazy dog.',
+  src: 'layer-34.jpg'
+}, {
+  id: 2,
+  altText: 'doctor smiles',
+  title: 'Product Name',
+  shortDesc: 'Product Short Description.',
+  desc: 'The quick brown fox jumps over the lazy dog.',
+  src: 'layer-35.jpg'
+}];
+ReactDOM.render(React.createElement(Products, { products: featuredProductsData }), document.getElementById('products'));

@@ -11,7 +11,7 @@ function CompanyPicture(props) {
 function CompanyInfo(props) {
   return (
     <div className="card-featured__info">
-      <a href="#" class="card-featured__info_company-name">
+      <a href="#" className="card-featured__info_company-name">
         {props.name}
       </a>
       <p className="card-featured__info_company-mfc">{props.specialization}</p>
@@ -27,7 +27,7 @@ class Companies extends React.Component {
   render() {
     return this.props.companies.map(element => {
       return (
-        <div class="featured__card card-featured">
+        <div className="featured__card card-featured">
           <CompanyPicture src={element.src} altText={element.altText} />
           <CompanyInfo
             name={element.name}
@@ -40,7 +40,7 @@ class Companies extends React.Component {
   }
 }
 
-let featuredCompaniesData = [
+const featuredCompaniesData = [
   {
     id: '1',
     altText: 'office of manufacturer',
@@ -93,7 +93,7 @@ class Services extends React.Component {
   }
 }
 
-let servicesData = [
+const servicesData = [
   {
     id: 1,
     title: 'Accountancy',
@@ -216,7 +216,7 @@ function PersonName(props) {
 
 function PersonPhoto(props) {
   return (
-    <div class="card-featured__photo">
+    <div className="card-featured__photo">
       <a href="#">
         <img src={'img/' + props.src} alt={props.title} />
       </a>
@@ -242,7 +242,7 @@ class People extends React.Component {
       return (
         <div className="featured__card card-featured_people">
           <PersonName title={human.title} />
-          <div class="card-featured__wrap">
+          <div className="card-featured__wrap">
             <PersonPhoto src={human.src} title={human.title} />
             <PersonInfo location={human.location} position={human.position} />
           </div>
@@ -252,7 +252,7 @@ class People extends React.Component {
   }
 }
 
-let featuredPeopleData = [
+const featuredPeopleData = [
   {
     id: 1,
     altText: 'Dennis Adams',
@@ -282,4 +282,69 @@ let featuredPeopleData = [
 ReactDOM.render(
   <People humans={featuredPeopleData} />,
   document.getElementById('people')
+);
+
+function ProductTitle(props) {
+  return (
+    <a href="#" className="card-featured__title">
+      {props.title}
+    </a>
+  );
+}
+
+function ProductPhoto(props) {
+  return (
+    <div className="card-featured__photo">
+      <a href="#">
+        <img src={'img/' + props.src} alt={props.altText} />
+      </a>
+    </div>
+  );
+}
+
+function ProductInfo(props) {
+  return (
+    <div className="card-featured__info-desc">
+      <div>{props.shortDesc}</div>
+      <div>{props.desc}</div>
+    </div>
+  );
+}
+
+class Products extends React.Component {
+  render() {
+    return this.props.products.map(product => {
+      return (
+        <div className="featured__card card-featured_product">
+          <ProductTitle title={product.title} />
+          <div className="card-featured__wrap">
+            <ProductPhoto src={product.src} altText={product.altText} />
+            <ProductInfo desc={product.desc} shortDesc={product.shortDesc} />
+          </div>
+        </div>
+      );
+    });
+  }
+}
+const featuredProductsData = [
+  {
+    id: 1,
+    altText: 'child during treatment',
+    title: 'Product Name',
+    shortDesc: 'Product Short Description.',
+    desc: 'The quick brown fox jumps over the lazy dog.',
+    src: 'layer-34.jpg'
+  },
+  {
+    id: 2,
+    altText: 'doctor smiles',
+    title: 'Product Name',
+    shortDesc: 'Product Short Description.',
+    desc: 'The quick brown fox jumps over the lazy dog.',
+    src: 'layer-35.jpg'
+  }
+];
+ReactDOM.render(
+  <Products products={featuredProductsData} />,
+  document.getElementById('products')
 );
