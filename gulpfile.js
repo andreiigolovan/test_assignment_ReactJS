@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 
 gulp.task('sass', function() {
     return gulp.src(['src/sass/**/*.sass', 'src/sass/**/*.scss'])
-        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('src/css'))
         .pipe(browserSync.reload({ stream: true }))
