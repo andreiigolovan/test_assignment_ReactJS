@@ -1,3 +1,130 @@
+// ads rerenderind in interval
+// 
+
+class AdsBlockLeft extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      images: props.images,
+      index: 0,
+      src: null
+    };
+  }
+
+  componentWillMount() {
+    // console.log(this.state.src)
+    this.state.src = 'img/' + this.state.images[0].src;
+  }
+
+  componentDidMount() {
+    let _this = this;
+    this.timerId = setInterval(function() {
+      // console.log(_this);
+      return _this.changeImg();
+    }, 2000);
+    console.log('timerId: ' + this.timerId);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerId);
+  }
+
+  changeImg() {
+    this.state.index += 1;
+    // console.log('first ad block index: ' + this.state.index);
+    if (this.state.index > 1) {
+      this.state.index = 0;
+    }
+    this.setState({
+      src: 'img/' + this.state.images[this.state.index].src
+    });
+  }
+
+  render() {
+    return (
+      <a href="#" key={this.state.images[this.state.index].id}>
+        <img
+          id="adsss__image_left"
+          className="adsss__image"
+          src={this.state.src}
+          alt="Advertisement"
+        />
+      </a>
+    );
+  }
+}
+
+const imagesLeftCOPY = [
+  { id: 1, src: '-----1.jpg' },
+  { id: 2, src: 'layer-42.jpg' }
+];
+
+ReactDOM.render(
+  <AdsBlockLeft images={imagesLeftCOPY} />,
+  document.getElementById('advLeft')
+);
+
+class AdsBlockRight extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      images: props.images,
+      index: 0,
+      src: null
+    };
+  }
+
+  componentWillMount() {
+    this.state.src = 'img/' + this.state.images[0].src;
+  }
+
+  componentDidMount() {
+    this.timerId = setInterval(() => {
+      this.changeImg();
+    }, 2500);
+    console.log('timerId: ' + this.timerId);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerId);
+  }
+
+  changeImg() {
+    this.state.index += 1;
+    // console.log('second ad block index: ' + this.state.index);
+    if (this.state.index > 2) {
+      this.state.index = 0;
+    }
+    this.setState({
+      src: 'img/' + this.state.images[this.state.index].src
+    });
+  }
+
+  render() {
+    return (
+      <a href="#" key={this.state.images[this.state.index].src}>
+        <img
+          id="adsss__image_right"
+          className="adsss__image"
+          src={this.state.src}
+          alt="Advertisement"
+        />
+      </a>
+    );
+  }
+}
+
+const imagesRightCOPY = [
+  { id: 1, src: '-----2.jpg' },
+  { id: 2, src: 'layer-32.jpg' },
+  { id: 3, src: 'layer-33.jpg' }
+];
+
+ReactDOM.render(
+  <AdsBlockRight images={imagesRightCOPY} />,
+  document.getElementById('advRight')
+);
+
 function CompanyPicture(props) {
   return (
     <div className="card-featured__photo">

@@ -61,8 +61,7 @@
         <!-- smth new now,chrome hides blocks with "ads/adss/advertisement's" classNames -->
         <!-- that was my AdBlock extension =( -->
         <h2 class="adsss__title">Advertisement</h2>
-        <div class="adsss__wrap">
-          <a href="#"><img id="adsss__image_left" class="adsss__image" src="img/-----1.jpg" alt="Advertisement"></a>
+        <div class="adsss__wrap" id="advLeft">
         </div>
         <p class="adsss__desc">Ads By Denteez.com</p>
       </div>
@@ -111,7 +110,8 @@
       </div>
       <div class="adsss adsss_right">
         <h2 class="adsss__title">Advertisement</h2>
-        <a href="#"><img id="adsss__image_right" class="adsss__image" src="img/-----2.jpg" alt="Advertisement"></a>
+        <div class="adsss__wrap" id="advRight">
+        </div>
         <p class="adsss__desc">Ads By Denteez.com</p>
       </div>
     </aside>
@@ -120,9 +120,12 @@
   <!-- production scripts -->
   <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
   <script src="js/common.js"></script>
   <!-- dev scripts -->
-  <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+  <!-- <script crossorigin src="https://unpkg.com/react@16.4.2/umd/react.development.js"></script> -->
+  <!-- <script crossorigin src="https://unpkg.com/react-dom@16.4.2/umd/react-dom.development.js"></script> -->
+  <!-- <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script> -->
   <!-- <script type="text/babel" src="js/babel/render_script.js"></script> -->
   <!-- <script src="js/index.js"></script> -->
 </body>
