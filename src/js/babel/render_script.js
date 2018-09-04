@@ -1,5 +1,5 @@
 // ads rerenderind in interval
-// 
+// react lifecycle methods use 
 
 class AdsBlockLeft extends React.Component {
   constructor(props) {
@@ -154,7 +154,7 @@ class Companies extends React.Component {
   render() {
     return this.props.companies.map(element => {
       return (
-        <div className="featured__card card-featured">
+        <div className="featured__card card-featured" key={element.id}>
           <CompanyPicture src={element.src} altText={element.altText} />
           <CompanyInfo
             name={element.name}
@@ -169,7 +169,7 @@ class Companies extends React.Component {
 
 const featuredCompaniesData = [
   {
-    id: '1',
+    id: 1,
     altText: 'office of manufacturer',
     name: 'Company Name',
     location: 'Belgrade, Serbia',
@@ -177,7 +177,7 @@ const featuredCompaniesData = [
     src: 'layer-39.jpg'
   },
   {
-    id: '2',
+    id: 2,
     altText: 'building of service provider',
     name: 'Company Name',
     location: 'New York, USA',
@@ -185,7 +185,7 @@ const featuredCompaniesData = [
     src: 'layer-40.jpg'
   },
   {
-    id: '3',
+    id: 3,
     altText: 'building of supplier',
     name: 'Company Name',
     location: 'London, England',
@@ -367,7 +367,7 @@ class People extends React.Component {
   render() {
     return this.props.humans.map(human => {
       return (
-        <div className="featured__card card-featured_people">
+        <div className="featured__card card-featured_people" key={human.id}>
           <PersonName title={human.title} />
           <div className="card-featured__wrap">
             <PersonPhoto src={human.src} title={human.title} />
@@ -442,7 +442,7 @@ class Products extends React.Component {
   render() {
     return this.props.products.map(product => {
       return (
-        <div className="featured__card card-featured_product">
+        <div className="featured__card card-featured_product" key={product.id}>
           <ProductTitle title={product.title} />
           <div className="card-featured__wrap">
             <ProductPhoto src={product.src} altText={product.altText} />
@@ -453,6 +453,7 @@ class Products extends React.Component {
     });
   }
 }
+
 const featuredProductsData = [
   {
     id: 1,

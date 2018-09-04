@@ -35,7 +35,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 // ads rerenderind in interval
-// 
+// react lifecycle methods use 
 
 var AdsBlockLeft = function (_React$Component) {
   _inherits(AdsBlockLeft, _React$Component);
@@ -234,7 +234,7 @@ var Companies = function (_React$Component3) {
       return this.props.companies.map(function (element) {
         return React.createElement(
           'div',
-          { className: 'featured__card card-featured' },
+          { className: 'featured__card card-featured', key: element.id },
           React.createElement(CompanyPicture, { src: element.src, altText: element.altText }),
           React.createElement(CompanyInfo, {
             name: element.name,
@@ -250,21 +250,21 @@ var Companies = function (_React$Component3) {
 }(React.Component);
 
 var featuredCompaniesData = [{
-  id: '1',
+  id: 1,
   altText: 'office of manufacturer',
   name: 'Company Name',
   location: 'Belgrade, Serbia',
   specialization: 'Manufacturer',
   src: 'layer-39.jpg'
 }, {
-  id: '2',
+  id: 2,
   altText: 'building of service provider',
   name: 'Company Name',
   location: 'New York, USA',
   specialization: 'Service Provider',
   src: 'layer-40.jpg'
 }, {
-  id: '3',
+  id: 3,
   altText: 'building of supplier',
   name: 'Company Name',
   location: 'London, England',
@@ -457,7 +457,7 @@ var People = function (_React$Component5) {
       return this.props.humans.map(function (human) {
         return React.createElement(
           'div',
-          { className: 'featured__card card-featured_people' },
+          { className: 'featured__card card-featured_people', key: human.id },
           React.createElement(PersonName, { title: human.title }),
           React.createElement(
             'div',
@@ -550,7 +550,7 @@ var Products = function (_React$Component6) {
       return this.props.products.map(function (product) {
         return React.createElement(
           'div',
-          { className: 'featured__card card-featured_product' },
+          { className: 'featured__card card-featured_product', key: product.id },
           React.createElement(ProductTitle, { title: product.title }),
           React.createElement(
             'div',
