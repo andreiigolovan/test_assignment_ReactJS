@@ -14,6 +14,19 @@ gulp.task('sass', function() {
         .pipe(browserSync.reload({ stream: true }))
 });
 
+function handleError(error) {
+    console.log(error.toString());
+    this.emit('end');
+}
+
+gulp.task('babel', function() {
+    return gulp.src('src/js/babel/*.js')
+        .pipe(babel()).on('error', handleError)
+        .pipe(concat('common.js'))
+        .pipe(gulp.dest('src/js/'))
+        .pipe(browserSync.reload({ stream: true }))
+})
+
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
@@ -30,10 +43,11 @@ gulp.task('clean', function() {
 gulp.task('watch', ['browser-sync', 'sass'], function() {
     gulp.watch('src/sass/**/*.sass', ['sass']);
     gulp.watch('src/*.html', browserSync.reload);
-    gulp.watch('src/js/**/*.js', browserSync.reload);
+    // gulp.watch('src/js/**/*.js', browserSync.reload);
+    gulp.watch('src/js/**/*.js', ['babel']);
 });
 
-gulp.task('build', ['clean', 'sass'], function() {
+gulp.task('build', ['clean', 'sass', 'babel'], function() {
 
     let buildCss = gulp.src('src/css/style.css')
         .pipe(gulp.dest('dist/css'));
@@ -41,13 +55,13 @@ gulp.task('build', ['clean', 'sass'], function() {
     let buildFonts = gulp.src('src/fonts/**/*')
         .pipe(gulp.dest('dist/fonts'));
 
-    // let buildJs = gulp.src('src/js/**/*')
-    //     .pipe(gulp.dest('dist/js'))
+    let buildJs = gulp.src('src/js/common.js')
+        .pipe(gulp.dest('dist/js'))
 
-    let buldJs = gulp.src('src/js/**/*.js')
-        .pipe(babel())
-        .pipe(concat('common.js'))
-        .pipe(gulp.dest('dist/js'));
+    // let buildJs = gulp.src('src/js/**/*.js')
+    //     .pipe(babel())
+    //     .pipe(concat('common.js'))
+    //     .pipe(gulp.dest('dist/js'));
 
     let buildHtml = gulp.src('src/*.html')
         .pipe(gulp.dest('dist'));
